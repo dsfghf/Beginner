@@ -4,7 +4,10 @@ class ozon:
         print("Welcome to OZON!\n")
 
     def __init__(self):
-        self.users=[]
+        self.users=[{"name":"Basma","age":23,"email":"basma@gmail.com"},
+                    {"name":"Nasma","age":21,"email":"nasma@gmail.com"},
+                    {"name":"Hamsa","age":19,"email":"hamsa@gmail.com"}
+        ]
         self.current_user=None
 
     def n_data(self):
@@ -93,7 +96,7 @@ class ozon:
 oz=ozon()
 oz.hi()
 
-while True :
+while True:
     choice=int(input ("Do you want to (1)Register or (2) Login ? Enter 1 or 2: "))
     if choice==1:
         if oz.register():
