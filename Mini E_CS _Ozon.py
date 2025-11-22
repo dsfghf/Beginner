@@ -93,20 +93,44 @@ class ozon:
         return True
 
 
-oz=ozon()
-oz.hi()
+# oz=ozon()
+# oz.hi()
 
 while True:
     choice=int(input ("Do you want to (1)Register or (2) Login ? Enter 1 or 2: "))
     if choice==1:
-        if oz.register():
+        # if oz.register():
            break
     elif choice==2:
-        if oz.login():
+        # if oz.login():
            break
     else:
         print("Invalid choice! Please enter 1 or 2 .\n")   
         
+        
+# oz.check_out()
 
 
-oz.check_out()
+class sales():
+    def __init__(self):
+      self.catalog=[{1:["shirt","Blouse","jacker","hoodie"]},
+                  {2:["Laptop","Tablet","Smartphone","Smartwatch"]},
+                  {3:["Meat","Chicken","Fish","Rice","Bread","Pasta"]}]
+      current_product=None
+        
+    def search(self):
+        print(f"This is our catalog{self.catalog}")
+        choice=input("Enter the list number you want to search within :: ")
+        for k,v in self.catalog:
+          if choice==k:
+              return self.catalog[v]
+          
+        
+        
+    def clothes(self):
+        
+        pass
+    def technic(self):
+        pass
+    def food(self):
+         pass
