@@ -92,45 +92,70 @@ class ozon:
         print("All data found! You are now logged in .\n")
         return True
 
-
-# oz=ozon()
-# oz.hi()
+oz=ozon()
+oz.hi()
 
 while True:
     choice=int(input ("Do you want to (1)Register or (2) Login ? Enter 1 or 2: "))
     if choice==1:
-        # if oz.register():
+         if oz.register():
            break
     elif choice==2:
-        # if oz.login():
+         if oz.login():
            break
     else:
         print("Invalid choice! Please enter 1 or 2 .\n")   
         
         
-# oz.check_out()
-
+oz.check_out()
 
 class sales():
     def __init__(self):
-      self.catalog=[{1:["shirt","Blouse","jacker","hoodie"]},
-                  {2:["Laptop","Tablet","Smartphone","Smartwatch"]},
-                  {3:["Meat","Chicken","Fish","Rice","Bread","Pasta"]}]
-      current_product=None
-        
+      self.catalog={1:["shirt","Blouse","jacker","hoodie"],
+                    2:["Laptop","Tablet","Smartphone","Smartwatch"],
+                    3:["Meat","Chicken","Fish","Rice","Bread","Pasta"],
+                    4: ["Exit"]}
+      
+      self.branch_catalog=None
+      self. current_product=None
+      
+    def show_item(self)  :
+        print("This is our Catalog ::")
+        for k,items in self.catalog.items():
+            print(f"Category{k}:")
+            for  item in items:
+                print(f"  - {item}")
+            print()
+            
     def search(self):
-        print(f"This is our catalog{self.catalog}")
-        choice=input("Enter the list number you want to search within :: ")
-        for k,v in self.catalog:
-          if choice==k:
-              return self.catalog[v]
+        while  True :
+           
+            choice=int(input("Enter the list number you want to search within :: "))
+            # for  k,v in self.catalog.items():
+            if choice  in self.catalog:
+                  self.branch_catalog=self.catalog[choice]
+                
+                  if choice==4:
+                      return exit
+                      
+              
+
+                   
+            else:
+                 print("Invalid choice ! Please Try again ..")    
+                
+    
+    def show_choice(self):
+        if self.branch_catalog:
+           print(" This your Category ::")
+           for i in self.branch_catalog:
+               print(f" -{i.upper()}")
+        else:
+            print("No category selected yet! ")
+    
+se=sales()
+se.show_item()
+se.search()
+se.show_choice()
+
           
-        
-        
-    def clothes(self):
-        
-        pass
-    def technic(self):
-        pass
-    def food(self):
-         pass
