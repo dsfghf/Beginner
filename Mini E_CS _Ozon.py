@@ -109,8 +109,10 @@ while True:
         
 oz.check_out()
 
-class sales():
+class sales(ozon):
+    
     def __init__(self):
+      super().__init__()
       self.catalog={1:["shirt","Blouse","jacker","hoodie"],
                     2:["Laptop","Tablet","Smartphone","Smartwatch"],
                     3:["Meat","Chicken","Fish","Rice","Bread","Pasta"],
@@ -120,7 +122,8 @@ class sales():
       self. current_product=None
       
     def show_item(self)  :
-        print("This is our Catalog ::")
+      
+        print(f"Hello {self.current_user[name]} This is our Catalog ::")
         for k,items in self.catalog.items():
             print(f"Category{k}:")
             for  item in items:
@@ -132,12 +135,12 @@ class sales():
            
             choice=int(input("Enter the list number you want to search within :: "))
             # for  k,v in self.catalog.items():
+            if choice==4:
+                return exit
             if choice  in self.catalog:
                   self.branch_catalog=self.catalog[choice]
-                
-                  if choice==4:
-                      return exit
-                      
+                  break
+                  
               
 
                    
